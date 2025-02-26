@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            overflow: hidden;
+        }
+        #container {
+            position: relative;
+            height: 400px;
+        }
+        #rabbit {
+            position: absolute;
+            white-space: pre;
+            font-family: monospace;
+            color: #ff6699;
+            animation: moveAndJump 8s linear infinite;
+        }
+        #message {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 24px;
+            color: #ff3366;
+            margin-top: 20px;
+        }
+
+        @keyframes moveAndJump {
+            0%, 100% {
+                left: 0;
+                top: 50px;
+            }
+            25% {
+                left: 75%;
+                top: 20px;
+            }
+            50% {
+                left: 100%;
+                top: 50px;
+            }
+            75% {
+                left: 25%;
+                top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="rabbit">
+ (\_/)
+(• - •)
+/ >❤️  >
+        </div>
+    </div>
+    <div id="message">兔子想人家了没</div>
+
+    <script>
+        // 添加随机耳朵抖动效果
+        const rabbit = document.getElementById('rabbit');
+        setInterval(() => {
+            rabbit.innerHTML = Math.random() > 0.5 ?
+                ` (\\_/)  \n(• - •) \n/ >❤️  >` :
+                ` (/_/)  \n(• - •) \n/ >❤️  >`;
+        }, 300);
+    </script>
+</body>
+</html>
